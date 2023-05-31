@@ -1,0 +1,20 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { PagesRoutingModule } from './pages/pages.routing';
+import { AuthRoutingModule } from './auth/auth.routing';
+import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Redirige a '/dashboard' como ruta por defecto
+  { path: '**', component: NopagefoundComponent }, // Cualquier otra ruta no encontrada muestra el componente NopagefoundComponent
+
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes),
+    PagesRoutingModule,
+    AuthRoutingModule,
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
