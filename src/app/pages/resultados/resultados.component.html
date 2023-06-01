@@ -1,0 +1,310 @@
+<div class="container-fluid">
+  <div class="row" style="padding-top: 20px">
+    <div class="col-sm-12 col-md-12 border-bottom">
+      <h3 class="title">consultar resultados</h3>
+    </div>
+
+    <div class="row" id="panelInformationProd" view="1"></div>
+    <div class="col-sm-6 col-md-6" style="padding-top: 10px">
+      <h3 style="color: #999999; font-size: 16px">
+        <small style="margin-right: 5px">JHEYSSER ANTONIO,</small>
+        <small style="margin-right: 5px"
+          >Nit:
+          <label
+            class="label"
+            id="label_super_soporte"
+            style="
+              background: #70a415;
+              font-size: 11px;
+              padding: 2px 4px;
+              color: white;
+              border-radius: 3px;
+            "
+            >1048609543</label
+          >
+        </small>
+      </h3>
+    </div>
+    <div class="col-sm-2 col-md-2" style="padding: 10px 10px">
+      <label class="checkbox-inline"
+        ><input type="checkbox" id="filter_date" value="" />Filtrar por
+        fecha</label
+      >
+    </div>
+  </div>
+  <div class="row" id="div_filter_person">
+    <div class="col-sm-8 col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-body border rounded p-3">
+          <div class="row">
+            <div
+              class="col-sm-6 col-md-6"
+              style="padding-bottom: 13px; border: none"
+            >
+              <div class="form-group" id="div_tipo_identificacion">
+                <label for="identificationtype" style="padding-bottom: 4px"
+                  >Tipo de Identificacion <span class="f_req"></span
+                ></label>
+                <select
+                  class="form-control"
+                  name="identificationtype"
+                  id="identificationtype"
+                  required=""
+                >
+                  <option value="">Seleccione</option>
+                  <option value="CC">Cedula de Ciudadania</option>
+                  <option value="TI">Tarjeta de Identidad</option>
+                  <option value="CE">Cedula de Extranjeria</option>
+                  <option value="RC">Registro Civil</option>
+                  <option value="NI">Nit</option>
+                  <option value="PA">Pasaporte</option>
+                  <option value="PE">Permiso especial</option>
+                  <option value="AS">Adulto sin Identificar</option>
+                  <option value="MS">Menor sin Identificacion</option>
+                  <option value="PT">Permiso por proteccion temporal</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div class="form-group" id="div_tipo_identificacion">
+                <label style="padding-bottom: 4px"
+                  >Numero Identificacion <span class="f_req"></span
+                ></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="txtIdentification"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row" style="padding-bottom: 14px">
+            <div class="col-sm-6 col-md-6">
+              <div class="form-group" id="div_tipo_identificacion">
+                <label style="padding-bottom: 4px"
+                  >Nombres<span class="f_req"></span
+                ></label>
+                <input class="form-control" type="text" id="txtNames" />
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div class="form-group" id="div_tipo_identificacion">
+                <label style="padding-bottom: 4px"
+                  >Apellidos<span class="f_req"></span
+                ></label>
+                <input class="form-control" type="text" id="txtLastNames" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 d-flex justify-content-end">
+              <button
+                style="
+                  color: #fff;
+                  background-color: #428bca;
+                  border-color: #357ebd;
+                  margin-bottom: 0;
+                  font-size: 14px;
+                  font-weight: normal;
+                "
+                class="btn btn-primary pull-right"
+                id="btnSearchPerson"
+                type="button"
+                data-loading-text="Buscando..."
+              >
+                <span class="fas fa-search"></span> Buscar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row p-4">
+    <div class="row">
+      <div class="col"></div>
+
+      <div class="col colPaginator">
+        <div class="row">
+          <div class="backgrid-paginator">
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a
+                  class="page-link"
+                  href="#"
+                  title="First"
+                  style="font-size: 13px; border: none"
+                  >《</a
+                >
+              </li>
+              <li class="page-item disabled">
+                <a
+                  class="page-link"
+                  href="#"
+                  title="Previous"
+                  style="font-size: 13px; border: none"
+                  >〈</a
+                >
+              </li>
+              <li class="page-item disabled">
+                <a
+                  class="page-link"
+                  href="#"
+                  title="Page 1"
+                  style="font-size: 13px; border: none"
+                  >1</a
+                >
+              </li>
+              <li class="page-item disabled">
+                <a
+                  class="page-link"
+                  href="#"
+                  title="Next"
+                  style="font-size: 13px; border: none"
+                  >〉</a
+                >
+              </li>
+              <li class="page-item disabled">
+                <a
+                  class="page-link"
+                  href="#"
+                  title="Last"
+                  style="font-size: 13px; border: none"
+                  >》</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col colPaginator2"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="formSep"></div>
+    <div class="col-sm-12 col-md-12">
+      <table class="table">
+        <thead>
+          <tr style="background-color: #f0f9ff">
+            <th><input type="checkbox" name="allSelect" id="allSelect" /></th>
+            <th>#</th>
+            <th>Solicitud</th>
+            <th>Fecha recepcion</th>
+            <th>Examenes</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="results_solicitud_company_list">
+          <tr>
+            <td>
+              <input
+                value="1"
+                name="seleccionar"
+                id="seleccionar"
+                type="checkbox"
+              />
+            </td>
+            <td>1</td>
+            <td>07058480</td>
+            <td>2022-10-25 08:35:12</td>
+            <td>COL,G,HDL,LDL,T</td>
+            <td>
+              <span id="btnPrintCompany">
+                <li title="Descargar Resultados">
+                  <i class="bi bi-download" style="font-size: 16px"></i>
+                </li>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                value="2"
+                name="seleccionar"
+                id="seleccionar"
+                type="checkbox"
+              />
+            </td>
+            <td>2</td>
+            <td>07004621</td>
+            <td>2021-05-25 10:28:33</td>
+            <td>COVIDAG</td>
+            <td>
+              <span id="btnPrintCompany">
+                <li title="Descargar Resultados">
+                  <i class="bi bi-download" style="font-size: 16px"></i>
+                </li>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                value="3"
+                name="seleccionar"
+                id="seleccionar"
+                type="checkbox"
+              />
+            </td>
+            <td>3</td>
+            <td>05364516</td>
+            <td>2021-03-19 13:39:54</td>
+            <td>CH5,V</td>
+            <td>
+              <span id="btnPrintCompany">
+                <li title="Descargar Resultados">
+                  <i class="bi bi-download" style="font-size: 16px"></i>
+                </li>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                value="4"
+                name="seleccionar"
+                id="seleccionar"
+                type="checkbox"
+              />
+            </td>
+            <td>4</td>
+            <td>01373424</td>
+            <td>2019-02-05 08:11:16</td>
+            <td>EH</td>
+            <td>
+              <span id="btnPrintCompany">
+                <li title="Descargar Resultados">
+                  <i class="bi bi-download" style="font-size: 16px"></i>
+                </li>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                value="5"
+                name="seleccionar"
+                id="seleccionar"
+                type="checkbox"
+              />
+            </td>
+            <td>5</td>
+            <td>01362656</td>
+            <td>2018-11-19 07:41:11</td>
+            <td>HB</td>
+            <td>
+              <span id="btnPrintCompany">
+                <li title="Descargar Resultados">
+                  <i class="bi bi-download" style="font-size: 16px"></i>
+                </li>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

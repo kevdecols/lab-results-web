@@ -14,11 +14,13 @@
   background-color: #e0e0e0;
 }
 
-.actualizar {
+.accordion-toggle {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
   text-transform: capitalize;
+  text-decoration: none;
+  color: #222;
 
 }
 
