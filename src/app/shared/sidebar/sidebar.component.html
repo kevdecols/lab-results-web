@@ -22,175 +22,248 @@
 
   <ul class="list-group">
     <li class="list-group-item">
-      <button class="btn actualizar">actualizar informacion</button>
+      <div class="panel">
+        <div class="panel-heading">
+          <a
+            id="actualizar"
+            routerLink="actualizar"
+            url="actualizar"
+            class="ruta accordion-toggle"
+            tipo=""
+          >
+            <i class="fas fa-file-alt"></i> actualizar informacion
+          </a>
+        </div>
+      </div>
+    </li>
 
-      <main class="container">
-        <div
-          class="modal"
-          id="ventanaModal"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="tituloVentana"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <!-- encabezado titulo del modal-->
-                <h5 id="tituloVentana">registrate</h5>
-                <button class="close" data-dismiss="modal" aria-label="cerrar">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
+    <li class="list-group-item">
+      <div class="panel">
+        <div class="panel-heading">
+          <a
+            id="resultados"
+            routerLink="resultados"
+            data-toggle="collapse"
+            url="resultados"
+            class="ruta accordion-toggle"
+            tipo=""
+          >
+            <i class="fas fa-file-alt"></i> Consultar Resultados
+          </a>
+        </div>
+      </div>
+    </li>
 
-              <div class="modal-body">
-                <!-- cuerpo de la ventana modal  -->
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div class="form-group" id="div_names">
-                      <label>Nombres <span class="f_req">*</span></label>
-                      <input
-                        id="names"
-                        name="names"
-                        class="form-control"
-                        type="text"
-                        value=""
-                        required=""
-                      />
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <div class="form-group" id="div_lastNames">
-                      <label>Apellidos <span class="f_req">*</span></label>
-                      <input
-                        id="lastnames"
-                        name="lastnames"
-                        class="form-control"
-                        type="text"
-                        value=""
-                        required=""
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div class="form-group" id="div_tipo_identificacion">
-                      <label
-                        >Tipo de Identificacion
-                        <span class="f_req">*</span></label
-                      >
-                      <select
-                        class="form-control"
-                        name="identificationtype"
-                        id="identificationtype"
-                        required=""
-                      >
-                        <option value="">Seleccione</option>
-                        <option value="CC">Cedula de Ciudadania</option>
-                        <option value="TI">Tarjeta de Identidad</option>
-                        <option value="CE">Cedula de Extranjeria</option>
-                        <option value="RC">Registro Civil</option>
-                        <option value="NI">Nit</option>
-                        <option value="PA">Pasaporte</option>
-                        <option value="PE">Permiso especial</option>
-                        <option value="AS">Adulto sin Identificar</option>
-                        <option value="MS">Menor sin Identificacion</option>
-                        <option value="PT">
-                          Permiso por proteccion temporal
-                        </option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <div class="form-group" id="div_username">
-                      <label
-                        >Numero Identificacion
-                        <span class="f_req">*</span></label
-                      >
-                      <input
-                        class="form-control"
-                        type="number"
-                        id="identification"
-                        name="identification"
-                        value=""
-                        required=""
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div class="form-group" id="div_password">
-                      <label>Contraseña <span class="f_req">*</span></label>
-                      <input
-                        class="form-control"
-                        type="password"
-                        id="password"
-                        name="password"
-                        value=""
-                        required=""
-                      />
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <div class="form-group">
-                      <label>Confirmar Contraseña</label>
-                      <input
-                        class="form-control"
-                        type="password"
-                        id="password_2"
-                        name="password_2"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div class="form-group">
-                      <label>Telefono</label>
-                      <input
-                        class="form-control"
-                        type="number"
-                        id="phones"
-                        name="phones"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <div class="form-group" id="div_email">
-                      <label
-                        >Correo Electronico<span class="f_req">*</span></label
-                      >
-                      <input
-                        class="form-control"
-                        type="email"
-                        id="email"
-                        name="email"
-                        value=""
-                      />
-                    </div>
-                  </div>
+    <li class="list-group-item">
+      <div class="panel">
+        <div class="panel-heading">
+          <a
+            id="personas"
+            routerLink="personas"
+            data-toggle="collapse"
+            url="personas"
+            class="ruta accordion-toggle"
+            tipo=""
+          >
+            <i class="fas fa-file-alt"></i> personas
+          </a>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+      <div class="panel panel-default" id="resultados">
+        <div class="panel-heading">
+          <a
+            id="empresa"
+            routerLink="empresa"
+            data-parent="#side_accordion"
+            data-toggle="collapse"
+            url="empresa"
+            class="ruta accordion-toggle"
+            tipo="hibrido"
+          >
+            <i class="fas fa-file-alt"></i> empresa
+          </a>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+      <div class="panel">
+        <div class="panel-heading">
+          <a
+            id="parametros"
+            routerLink="parametros"
+            data-toggle="collapse"
+            url="parametros"
+            class="ruta accordion-toggle"
+            tipo=""
+          >
+            <i class="fas fa-file-alt"></i> parametros
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <!-- modal  -->
+  <main class="container">
+    <div
+      class="modal"
+      id="ventanaModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="tituloVentana"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- encabezado titulo del modal-->
+            <h5 id="tituloVentana">registrate</h5>
+            <button class="close" data-dismiss="modal" aria-label="cerrar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <!-- cuerpo de la ventana modal  -->
+            <div class="row">
+              <div class="col-sm-6 col-md-6">
+                <div class="form-group" id="div_names">
+                  <label>Nombres <span class="f_req">*</span></label>
+                  <input
+                    id="names"
+                    name="names"
+                    class="form-control"
+                    type="text"
+                    value=""
+                    required=""
+                  />
                 </div>
               </div>
-              <div class="modal-footer">
-                <button
-                  class="btn btn-danger pull-left"
-                  type="button"
-                  data-dismiss="modal"
-                >
-                  cerrar
-                </button>
-                <button class="btn btn-primary" type="button">
-                  actualizar
-                </button>
+              <div class="col-sm-6 col-md-6">
+                <div class="form-group" id="div_lastNames">
+                  <label>Apellidos <span class="f_req">*</span></label>
+                  <input
+                    id="lastnames"
+                    name="lastnames"
+                    class="form-control"
+                    type="text"
+                    value=""
+                    required=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-6">
+                <div class="form-group" id="div_tipo_identificacion">
+                  <label
+                    >Tipo de Identificacion <span class="f_req">*</span></label
+                  >
+                  <select
+                    class="form-control"
+                    name="identificationtype"
+                    id="identificationtype"
+                    required=""
+                  >
+                    <option value="">Seleccione</option>
+                    <option value="CC">Cedula de Ciudadania</option>
+                    <option value="TI">Tarjeta de Identidad</option>
+                    <option value="CE">Cedula de Extranjeria</option>
+                    <option value="RC">Registro Civil</option>
+                    <option value="NI">Nit</option>
+                    <option value="PA">Pasaporte</option>
+                    <option value="PE">Permiso especial</option>
+                    <option value="AS">Adulto sin Identificar</option>
+                    <option value="MS">Menor sin Identificacion</option>
+                    <option value="PT">Permiso por proteccion temporal</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6">
+                <div class="form-group" id="div_username">
+                  <label
+                    >Numero Identificacion <span class="f_req">*</span></label
+                  >
+                  <input
+                    class="form-control"
+                    type="number"
+                    id="identification"
+                    name="identification"
+                    value=""
+                    required=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-6">
+                <div class="form-group" id="div_password">
+                  <label>Contraseña <span class="f_req">*</span></label>
+                  <input
+                    class="form-control"
+                    type="password"
+                    id="password"
+                    name="password"
+                    value=""
+                    required=""
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                  <label>Confirmar Contraseña</label>
+                  <input
+                    class="form-control"
+                    type="password"
+                    id="password_2"
+                    name="password_2"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                  <label>Telefono</label>
+                  <input
+                    class="form-control"
+                    type="number"
+                    id="phones"
+                    name="phones"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6">
+                <div class="form-group" id="div_email">
+                  <label>Correo Electronico<span class="f_req">*</span></label>
+                  <input
+                    class="form-control"
+                    type="email"
+                    id="email"
+                    name="email"
+                    value=""
+                  />
+                </div>
               </div>
             </div>
           </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-danger pull-left"
+              type="button"
+              data-dismiss="modal"
+            >
+              cerrar
+            </button>
+            <button class="btn btn-primary" type="button">actualizar</button>
+          </div>
         </div>
-      </main>
-    </li>
-  </ul>
+      </div>
+    </div>
+  </main>
 </div>
