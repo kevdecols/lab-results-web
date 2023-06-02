@@ -1,1 +1,832 @@
-<p>empresa works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div
+      class="col-md-12 col-sm-12"
+      style="padding-top: 20px; padding-bottom: 10px"
+    >
+      <h3 class="title">empresas</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-9 col-sm-9">
+        <div class="col-sm-5 col-md-5">
+          <div class="input-group input-group-sm">
+            <input
+              size="12"
+              class="form-control"
+              id="txtSearchGeneral"
+              type="text"
+            />
+            <div class="input-group-btn">
+              <button
+                id="btnSearchGeneral"
+                type="button"
+                class="btn btn-outline-primary"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 d-flex justify-content-end">
+        <button type="button" id="btnIrCrearUsers" class="btn btn-primary">
+          Nuevo
+        </button>
+      </div>
+    </div>
+    <div
+      class="row dataTables_length"
+      style="padding-top: 20px; padding-bottom: 10px"
+    >
+      <div class="col-sm-2 col-md-2">
+        <label></label>
+        <select id="select_paginator" class="">
+          <option value="10">10</option>
+          <option value="15" selected="selected">15</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <div class="col-sm-8 col-md-8">
+        <nav aria-label="Page navigation" class="d-flex justify-content-center">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">〈</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item"><a class="page-link" href="#">6</a></li>
+            <li class="page-item"><a class="page-link" href="#">7</a></li>
+            <li class="page-item"><a class="page-link" href="#">8</a></li>
+            <li class="page-item"><a class="page-link" href="#">9</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">〉</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="col-sm-2 col-md-2 pull-right">
+        <div
+          id="div_size_paginator"
+          class="dataTables_info"
+          style="text-align: right"
+        >
+          1 a 15 de 133
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-12">
+      <table id="company_table_list" class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+
+            <th class="th_column_order" id="code">
+              Codigo
+              <span class="pull-right">
+                <i class=""></i>
+              </span>
+            </th>
+
+            <th class="th_column_order" id="identification">
+              Nit
+              <span class="pull-right">
+                <i class=""></i>
+              </span>
+            </th>
+
+            <th class="th_column_order" id="names">
+              Razon Social
+              <span class="pull-right">
+                <i class=""></i>
+              </span>
+            </th>
+
+            <th class="th_column_order" id="phones">
+              Telefono
+              <span class="pull-right">
+                <i class=""></i>
+              </span>
+            </th>
+
+            <th class="th_column_order" id="email">
+              Correo Electronico
+              <span class="pull-right">
+                <i class=""></i>
+              </span>
+            </th>
+
+            <th class="th_column_order" id="active">
+              Estado
+              <span class="pull-right">
+                <i class=""></i>
+              </span>
+            </th>
+
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="company_list" class="small small-rowlink">
+          <tr>
+            <td>1</td>
+
+            <td>ADILAB,ADILAB.</td>
+
+            <td>900341857-2</td>
+
+            <td>ADILAB - AYUDAS DIAGNOSTICAS Y LABORATORIO CLINICO S.A.S</td>
+
+            <td>2335681</td>
+
+            <td>laboralorioi@adilab.com.co</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+
+            <td>MEDIET,MEDIET.</td>
+
+            <td>900435628-7</td>
+
+            <td>Medicina Especializada y del Trabajo</td>
+
+            <td>6817290</td>
+
+            <td>defecto@hotmail.com</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+
+            <td>GEN,GEN.,GENT,GENT.</td>
+
+            <td>900192096-4</td>
+
+            <td>Laboratorio Clinico Genesis</td>
+
+            <td>6644546</td>
+
+            <td>dcientificagenesis@hotmail.com</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+
+            <td>HUMAT,HUMAT.</td>
+
+            <td>900621968-3</td>
+
+            <td>LABORATORIO CLINICO ESPECIALIZADO HUMALIB S.A.S</td>
+
+            <td>7825610</td>
+
+            <td>defecto@hotmail.com</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+
+            <td>MEDIL,MEDIL.,MEDILAB-S,MEDILAB-S.</td>
+
+            <td>900405598-6</td>
+
+            <td>
+              Medilab Laboratorio Clinico Especialista en Salud Ocupacional Ltda
+            </td>
+
+            <td>6445907</td>
+
+            <td>defecto@hotmail.com</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+
+            <td>CDB,CDB.</td>
+
+            <td>900775143-5</td>
+
+            <td>UNION TEMPORAL DUCOT</td>
+
+            <td>7422294</td>
+
+            <td>BACTERIOLOGOSCLINICAELBOSQUE@GMAIL.COM</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+
+            <td>CMA,CMA.</td>
+
+            <td>900537790-0</td>
+
+            <td>INVERSIONES MONTES ANTEQUERA S.A.S</td>
+
+            <td>3165285715</td>
+
+            <td>defecto@hotmail.com</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>8</td>
+
+            <td>AEJ,AEJ.</td>
+
+            <td>80422231-1</td>
+
+            <td>ARMANDO ESCOBAR JUYO</td>
+
+            <td>3135322290</td>
+
+            <td>defecto@hotmail.com</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+
+            <td>LABSTA</td>
+
+            <td>900434332-8</td>
+
+            <td>LABORATORIO CLINICO SANTA LUCIA</td>
+
+            <td>0</td>
+
+            <td>sistemas@labsantalucia.net.co</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>10</td>
+
+            <td>SEYSOL,SEYSOL.</td>
+
+            <td>900972491</td>
+
+            <td>Servicios Empresariales y Soluciones de Salud Laboral S.A.S</td>
+
+            <td>6775226</td>
+
+            <td>defecto@hotmail.com</td>
+
+            <td>Inactivo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>11</td>
+
+            <td>AGC,AGC.</td>
+
+            <td>73098101</td>
+
+            <td>Alberto Galvis Cano</td>
+
+            <td>3158880082</td>
+
+            <td>defecto@hotmail.com</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>12</td>
+
+            <td>AYC,AYC.</td>
+
+            <td>45534796</td>
+
+            <td>A&amp;C Asesoria y consultoria</td>
+
+            <td>3103652287</td>
+
+            <td>shirleyjarabam@gmail.com</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>13</td>
+
+            <td>BCK,BCK.</td>
+
+            <td>900963642-5</td>
+
+            <td>BECKMAN COULTER COLOMBIA SAS</td>
+
+            <td>7455954</td>
+
+            <td>SERGIO.BROWN@BECKMAN.COM</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>14</td>
+
+            <td>BIOM,BIOM.</td>
+
+            <td>45453263-8</td>
+
+            <td>BIOMEDICINA</td>
+
+            <td>3233673769</td>
+
+            <td>defecto@hotmail.com</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>15</td>
+
+            <td>BARU,BARU.</td>
+
+            <td>900600550</td>
+
+            <td>INVERSIONES MEDICAS BARU SAS</td>
+
+            <td>6455101</td>
+
+            <td>defecto@hotmail.com</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              id="btnCloseForm"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              x
+            </button>
+            <h3 class="modal-title">
+              <span id="tittle_action">Actualizar Empresa </span>
+            </h3>
+          </div>
+          <div class="modal-body">
+            <span id="alert-content"></span>
+
+            <div id="msg_state_company_admin" style="display: none"></div>
+            <div id="company_form_general">
+              <form id="company_form_new" enctype="multipart/form-data">
+                <div class="row">
+                  <div class="col-sm-6 col-md-6"></div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_code" class="">
+                      <label>Codigo</label>
+
+                      <textarea
+                        name="code"
+                        id="code"
+                        cols="10"
+                        rows="3"
+                        class="form-control"
+                      >
+ADILAB,ADILAB.</textarea
+                      >
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_identification" class="">
+                      <label>Nit</label>
+                      <input
+                        id="identification"
+                        name="identification"
+                        type="text"
+                        class="form-control"
+                        value="900341857-2"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_names" class="">
+                      <label>Razon Social</label>
+                      <input
+                        id="names"
+                        name="names"
+                        type="text"
+                        class="form-control"
+                        value="ADILAB - AYUDAS DIAGNOSTICAS Y LABORATORIO CLINICO S.A.S"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_phones" class="">
+                      <label>Telefono</label>
+                      <input
+                        id="phones"
+                        name="phones"
+                        type="text"
+                        class="form-control"
+                        value="2335681"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_password" class="">
+                      <label>Contraseña</label>
+                      <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        class="form-control"
+                        value="adilab2018"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_password_2" class="">
+                      <label>Confirmar Contraseña</label>
+                      <input
+                        id="password_2"
+                        name="password_2"
+                        type="password"
+                        class="form-control"
+                        value="adilab2018"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_email" class="">
+                      <label>Correo Electronico</label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="text"
+                        class="form-control"
+                        value="laboralorioi@adilab.com.co"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_contac" class="">
+                      <label>Contacto</label>
+                      <input
+                        id="contac"
+                        name="contac"
+                        type="text"
+                        class="form-control"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_phone_contact" class="">
+                      <label>Telefono de Contacto</label>
+                      <input
+                        id="phone_contact"
+                        name="phone_contact"
+                        type="text"
+                        class="form-control"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_active" class="">
+                      <label>Estado</label>
+                      <select name="active" id="active" class="form-control">
+                        <option value="">--Seleccione--</option>
+
+                        <option selected="selected" value="1">Activo</option>
+
+                        <option value="0">Inactivo</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_download_options" class="">
+                      <label>Descargar</label>
+                      <select
+                        name="download_options"
+                        id="download_options"
+                        class="form-control"
+                      >
+                        <option value="">Seleccione</option>
+
+                        <option selected="selected" value="si">
+                          Descarga Resultado
+                        </option>
+
+                        <option value="no">No descarga Resultado</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_logo_options" class="">
+                      <label>Logo</label>
+                      <select
+                        name="logo_options"
+                        id="logo_options"
+                        class="form-control"
+                      >
+                        <option value="">Seleccione</option>
+
+                        <option value="sin_logo">Sin Logo</option>
+
+                        <option value="logo_empresa">Logo empresarial</option>
+
+                        <option selected="selected" value="logo_sta">
+                          Logo Santa Lucia
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_urlimg" class="">
+                      <label>Header</label>
+                      <div
+                        class="fileupload fileupload-new vis_aux"
+                        data-provides="fileupload"
+                      >
+                        <div
+                          class="fileupload-new img-thumbnail"
+                          style="width: 80px; height: 80px"
+                        >
+                          <img
+                            id="logoSoporte"
+                            class="aux_rem"
+                            alt=""
+                            width="80"
+                            height="80"
+                            src=""
+                          />
+                        </div>
+                        <div
+                          class="fileupload-preview fileupload-exists img-thumbnail"
+                          style="width: 80px; height: 80px"
+                        ></div>
+                        <span class="btn btn-sm btn-default btn-file">
+                          <span class="fileupload-new">Select image</span>
+                          <span class="fileupload-exists">Change</span
+                          ><input
+                            type="file"
+                            id="urlimg-company"
+                            name="urlimg-company"
+                        /></span>
+                        <a
+                          href="#"
+                          class="btn btn-sm btn-default fileupload-exists"
+                          data-dismiss="fileupload"
+                          id="removeFile"
+                          >Remove</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <div id="div_footer" class="">
+                      <label>Footer</label>
+                      <div
+                        class="fileupload fileupload-new vis_aux"
+                        data-provides="fileupload"
+                      >
+                        <div
+                          class="fileupload-new img-thumbnail"
+                          style="width: 80px; height: 80px"
+                        >
+                          <img
+                            id="logoSoporte"
+                            class="aux_rem"
+                            alt=""
+                            width="80"
+                            height="80"
+                            src=""
+                          />
+                        </div>
+                        <div
+                          class="fileupload-preview fileupload-exists img-thumbnail"
+                          style="width: 80px; height: 80px"
+                        ></div>
+                        <span class="btn btn-sm btn-default btn-file">
+                          <span class="fileupload-new">Select image</span>
+                          <span class="fileupload-exists">Change</span
+                          ><input
+                            type="file"
+                            id="footer-company"
+                            name="footer-company"
+                        /></span>
+                        <a
+                          href="#"
+                          class="btn btn-sm btn-default fileupload-exists"
+                          data-dismiss="fileupload"
+                          id="removeFile"
+                          >Remove</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    id="btnRegisterNew"
+                    class="btn btn-primary pull-left"
+                  >
+                    Aceptar
+                  </button>
+
+                  <button
+                    type="button"
+                    id="btnCloseRegisteNew"
+                    class="btn btn-default"
+                    data-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
