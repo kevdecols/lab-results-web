@@ -1,0 +1,25 @@
+.container-fluid {
+  -webkit-text-size-adjust: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222;
+  font-size: 13px;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 1px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.title {
+  line-height: 27px;
+  font-size: 18px;
+  border-bottom: 1px solid #dcdcdc;
+  margin-bottom: 18px;
+  padding-bottom: 5px;
+}
+
+.colored-column {
+  background-color: #ebf2f6;
+}

@@ -1,1 +1,209 @@
-<p>parametros works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div
+      class="col-md-12 col-sm-12"
+      style="padding-top: 20px; padding-bottom: 10px"
+    >
+      <h3 class="title">parametros</h3>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 col-md-3">
+        <div class="form-group" id="div_parametros">
+          <select
+            class="form-control"
+            name="parametros"
+            id="parametros"
+            required=""
+          >
+            <option value="">--Seleccione--</option>
+            <option value="RESTRICTED_COMPANY_CODES">
+              Empresas - Restriccion
+            </option>
+            <option value="DOM_EXAM_SPECIAL_COMPANY">
+              Examenes por Empresa
+            </option>
+            <option value="DOM_EXAM_SPECIAL">Examenes Restringidos</option>
+            <option value="DOM_DATE_LIMIT">Fecha Limite descarga</option>
+            <option value="DOM_COMPANY_TOTAL">Empresa - Valor req.</option>
+            <option value="identificationtype">Tipo Identificacion</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-md-3">
+        <div class="form-group" id="div_estado">
+          <select class="form-control" name="estado" id="estado" required="">
+            <option value="">--Seleccione--</option>
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-md-3">
+        <div class="input-group input-group-sm">
+          <input
+            size="12"
+            class="form-control"
+            id="txtSearchGeneral"
+            type="text"
+          />
+          <div class="input-group-btn">
+            <button
+              id="btnSearchGeneral"
+              type="button"
+              class="btn btn-outline-primary"
+            >
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 d-flex justify-content-end">
+        <button type="button" id="btnIrCrearUsers" class="btn btn-primary">
+          Nuevo
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="row dataTables_length"
+    style="padding-top: 20px; padding-bottom: 10px"
+  >
+    <div class="col-sm-2 col-md-2">
+      <label></label>
+      <select id="select_paginator" class="">
+        <option value="10">10</option>
+        <option value="15" selected="selected">15</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+    <div class="col-sm-8 col-md-8">
+      <nav aria-label="Page navigation" class="d-flex justify-content-center">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">〈</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">4</a></li>
+          <li class="page-item"><a class="page-link" href="#">5</a></li>
+          <li class="page-item"><a class="page-link" href="#">6</a></li>
+          <li class="page-item"><a class="page-link" href="#">7</a></li>
+          <li class="page-item"><a class="page-link" href="#">8</a></li>
+          <li class="page-item"><a class="page-link" href="#">9</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">〉</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="col-sm-2 col-md-2 pull-right">
+      <div
+        id="div_size_paginator"
+        class="dataTables_info"
+        style="text-align: right"
+      >
+        1 a 15 de 133
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <table id="domain_table_list" class="table table-bordered table-striped">
+        <thead>
+          <tr class="colored-column">
+            <th>#</th>
+
+            <th class="th_column_order" id="nombre">
+              Nombre
+              <span class="pull-right">
+                <i class="glyphicon glyphicon-chevron-up"></i>
+              </span>
+            </th>
+
+            <th class="th_column_order" id="valor">
+              Valor
+              <span class="pull-right">
+                <i class=""></i>
+              </span>
+            </th>
+
+            <th class="th_column_order" id="titulo">
+              Titulo
+              <span class="pull-right">
+                <i class=""></i>
+              </span>
+            </th>
+
+            <th class="th_column_order" id="estado">
+              Estado
+              <span class="pull-right">
+                <i class=""></i>
+              </span>
+            </th>
+
+            <th></th>
+          </tr>
+        </thead>
+        <tbody
+          id="domain_list"
+          class="small small-rowlink"
+          style="color: #222; font-size: 13px"
+        >
+          <tr>
+            <td>1</td>
+
+            <td>Examenes Restringidos</td>
+
+            <td>PAT</td>
+
+            <td>Examene Especial</td>
+
+            <td>Inactivo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+              &nbsp;
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+
+            <td>Examenes Restringidos</td>
+
+            <td>EP</td>
+
+            <td>Examene Especial</td>
+
+            <td>Activo</td>
+
+            <td>
+              <span id="btnEdit"
+                ><i class="fas fa-file-alt" alt title="editar"></i>
+              </span>
+              &nbsp;
+              <span id="btnDelete"
+                ><i class="fas fa-trash-alt" alt title="eliminar"></i>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
