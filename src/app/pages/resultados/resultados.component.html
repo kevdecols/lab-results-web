@@ -37,13 +37,17 @@
       style="border-bottom: 1px solid #dcdcdc; margin-bottom: 18px"
     >
       <label class="checkbox-inline"
-        ><input type="checkbox" id="filter_date" value="" />Filtrar por
-        fecha</label
+        ><input
+          type="checkbox"
+          id="filter_date"
+          value=""
+          (change)="toggleFechas()"
+        />Filtrar por fecha</label
       >
     </div>
   </div>
 
-  <div class="row" id="div_date_filter" style="display: none">
+  <div class="row" id="div_date_filter" *ngIf="mostrarFechas">
     <div class="form-group col-sm-3 col-md-3">
       <input
         id="date_init"
@@ -69,12 +73,12 @@
         type="button"
         data-loading-text="Buscando..."
       >
-        <span class="glyphicon glyphicon-search"></span> Buscar
+        <span class="fas fa-search"></span> Buscar
       </button>
     </div>
   </div>
 
-  <div class="row" id="div_filter_person">
+  <div class="row" id="div_filter_person" *ngIf="!mostrarFechas">
     <div class="col-sm-8 col-md-8">
       <div class="panel panel-default">
         <div class="panel-body border rounded p-3">
