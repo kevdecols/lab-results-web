@@ -3,9 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-resultados',
   templateUrl: './resultados.component.html',
-  styleUrls: ['./resultados.component.css'
-  ]
+  styleUrls: ['./resultados.component.css']
 })
 export class ResultadosComponent {
+  mostrarFechas: boolean = false;
 
+  toggleFechas() {
+    this.mostrarFechas = !this.mostrarFechas;
+  }
 }
