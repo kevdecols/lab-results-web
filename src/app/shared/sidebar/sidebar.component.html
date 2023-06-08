@@ -17,7 +17,10 @@
     />
   </div>
 
-  <button class="btn btn-primary sidebar-close" (click)="toggleSidebar()">
+  <button
+    class="btn btn-primary-custom sidebar-close"
+    (click)="toggleSidebar()"
+  >
     <i class="fa fa-bars"></i>
   </button>
 
@@ -28,6 +31,7 @@
           <button
             id="actualizar"
             class="ruta accordion-toggle"
+            (click)="open(content)"
             tipo=""
             ngbTooltip="Actualizar información"
           >
@@ -107,3 +111,155 @@
     </li>
   </ul>
 </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-content">
+    <div class="modal-header">
+      <!-- encabezado titulo del modal-->
+      <h5 id="tituloVentana">registrate</h5>
+    </div>
+
+    <div class="modal-body">
+      <!-- cuerpo de la ventana modal  -->
+      <div class="row">
+        <div class="col-sm-6 col-md-6">
+          <div class="form-group" id="div_names">
+            <label>Nombres <span class="f_req">*</span></label>
+            <input
+              id="names"
+              name="names"
+              class="form-control"
+              type="text"
+              value=""
+              required=""
+            />
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="form-group" id="div_lastNames">
+            <label>Apellidos <span class="f_req">*</span></label>
+            <input
+              id="lastnames"
+              name="lastnames"
+              class="form-control"
+              type="text"
+              value=""
+              required=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6">
+          <div class="form-group" id="div_tipo_identificacion">
+            <label>Tipo de Identificacion <span class="f_req">*</span></label>
+            <select
+              class="form-control"
+              name="identificationtype"
+              id="identificationtype"
+              required=""
+            >
+              <option value="">Seleccione</option>
+              <option value="CC">Cedula de Ciudadania</option>
+              <option value="TI">Tarjeta de Identidad</option>
+              <option value="CE">Cedula de Extranjeria</option>
+              <option value="RC">Registro Civil</option>
+              <option value="NI">Nit</option>
+              <option value="PA">Pasaporte</option>
+              <option value="PE">Permiso especial</option>
+              <option value="AS">Adulto sin Identificar</option>
+              <option value="MS">Menor sin Identificacion</option>
+              <option value="PT">Permiso por proteccion temporal</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="form-group" id="div_username">
+            <label>Numero Identificacion <span class="f_req">*</span></label>
+            <input
+              class="form-control"
+              type="number"
+              id="identification"
+              name="identification"
+              value=""
+              required=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6">
+          <div class="form-group" id="div_password">
+            <label>Contraseña <span class="f_req">*</span></label>
+            <input
+              class="form-control"
+              type="password"
+              id="password"
+              name="password"
+              value=""
+              required=""
+            />
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="form-group">
+            <label>Confirmar Contraseña</label>
+            <input
+              class="form-control"
+              type="password"
+              id="password_2"
+              name="password_2"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6">
+          <div class="form-group">
+            <label>Telefono</label>
+            <input
+              class="form-control"
+              type="number"
+              id="phones"
+              name="phones"
+              value=""
+            />
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="form-group" id="div_email">
+            <label>Correo Electronico<span class="f_req">*</span></label>
+            <input
+              class="form-control"
+              type="email"
+              id="email"
+              name="email"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer d-flex justify-content-between">
+      <!-- <button
+        class="btn btn-danger pull-left"
+        type="button"
+        data-dismiss="modal"
+      >
+        cerrar
+      </button>
+      <button class="btn btn-primary" type="button">actualizar</button> -->
+      <button
+        type="button"
+        class="btn btn-danger pull-left"
+        (click)="d('Cross click')"
+      >
+        cerrar
+      </button>
+      <button type="button" class="btn btn-primary" (click)="c('Save click')">
+        actualizar
+      </button>
+    </div>
+  </div>
+</ng-template>
