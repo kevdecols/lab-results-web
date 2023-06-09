@@ -16,4 +16,5 @@ export class PersonasComponent {
   open(content: any) {
     this.modalService.open(content);
   }
+
 }

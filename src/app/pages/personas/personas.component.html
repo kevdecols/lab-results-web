@@ -168,11 +168,11 @@
               <td>Activo</td>
 
               <td>
-                <span id="btnEdit"
+                <span id="btnEdit " (click)="open(updateModal)"
                   ><i class="fas fa-file-alt" alt title="editar"></i>
                 </span>
                 &nbsp;
-                <span id="btnDelete"
+                <span id="btnDelete" (click)="open(deleteUser)"
                   ><i class="fas fa-trash-alt" alt title="eliminar"></i>
                 </span>
               </td>
@@ -187,15 +187,6 @@
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-content">
     <div class="modal-header">
-      <button
-        type="button"
-        id="btnCloseForm"
-        class="close"
-        data-dismiss="modal"
-        aria-hidden="true"
-      >
-        x
-      </button>
       <h3 class="modal-title"><span id="tittle_action">Nuevo Usuario</span></h3>
     </div>
     <div class="modal-body">
@@ -346,25 +337,240 @@
               </div>
             </div>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer d-flex justify-content-between">
             <button
               type="button"
-              id="btnRegisterNew"
-              class="btn btn-primary pull-left"
+              class="btn btn-danger pull-left"
+              (click)="d('Cross click')"
+            >
+              cerrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="c('Save click')"
             >
               Aceptar
             </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>
 
+<ng-template #updateModal let-c="close" let-d="dismiss">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">
+        <span id="tittle_action"></span>Actualizar Usuario
+      </h3>
+    </div>
+    <div class="modal-body">
+      <span id="alert-content"></span>
+
+      <div id="msg_state_users_admin" style="display: none"></div>
+      <div id="users_form_general">
+        <form id="users_form_new">
+          <div class="row">
+            <div class="col-sm-6 col-md-6"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_identificationtype" class="">
+                <label>Tipo de identificacion</label>
+                <select
+                  name="identificationtype"
+                  id="identificationtype"
+                  class="form-control"
+                >
+                  <option value="">Seleccione</option>
+
+                  <option value="CC">Cedula de Ciudadania</option>
+
+                  <option value="TI">Tarjeta de Identidad</option>
+
+                  <option value="CE">Cedula de Extranjeria</option>
+
+                  <option value="RC">Registro Civil</option>
+
+                  <option value="NI">Nit</option>
+
+                  <option value="PA">Pasaporte</option>
+
+                  <option value="PE">Permiso especial</option>
+
+                  <option value="AS">Adulto sin Identificar</option>
+
+                  <option value="MS">Menor sin Identificacion</option>
+
+                  <option value="PT">Permiso por proteccion temporal</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_identification" class="">
+                <label>Idetificacion</label>
+                <input
+                  id="identification"
+                  name="identification"
+                  type="text"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_names" class="">
+                <label>Nombres</label>
+                <input
+                  id="names"
+                  name="names"
+                  type="text"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_lastnames" class="">
+                <label>Apellidos</label>
+                <input
+                  id="lastnames"
+                  name="lastnames"
+                  type="text"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_password" class="">
+                <label>Contraseña</label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_password_2" class="">
+                <label>Confirmar Contraseña</label>
+                <input
+                  id="password_2"
+                  name="password_2"
+                  type="password"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_phones" class="">
+                <label>Telefono</label>
+                <input
+                  id="phones"
+                  name="phones"
+                  type="text"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_email" class="">
+                <label>Correo Electronico</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="text"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_active" class="">
+                <label>Estado</label>
+                <select name="active" id="active" class="form-control">
+                  <option value="">--Seleccione--</option>
+
+                  <option value="1">Activo</option>
+
+                  <option value="0">Inactivo</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-between">
             <button
               type="button"
-              id="btnCloseRegisteNew"
-              class="btn btn-default"
-              data-dismiss="modal"
+              class="btn btn-danger pull-left"
+              (click)="d('Cross click')"
             >
-              Cerrar
+              cerrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="c('Save click')"
+            >
+              Aceptar
             </button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #deleteUser let-c="close" let-d="dismiss">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Confirmacion</h3>
+    </div>
+    <div class="modal-body">
+      <div id="msg_state_users_admin1" style="display: none"></div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <span
+            >Usuario seleccionado:
+            <strong id="users_name"> JHEYSSER ANTONIO</strong>
+          </span>
+          <br />
+          <span>Esta seguro de eliminar este usuario? </span>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <button
+          type="button"
+          id="btnConfirmationDelete"
+          class="btn btn-primary pull-left"
+          (click)="c('Save click')"
+        >
+          Aceptar
+        </button>
+        <button
+          type="button"
+          id="btnConfirmationDeleteClose"
+          class="btn btn-default"
+          data-dismiss="modal"
+          (click)="d('Cross click')"
+        >
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
