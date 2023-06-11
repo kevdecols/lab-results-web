@@ -1,1 +1,6 @@
-<router-outlet></router-outlet>
+<div class="h-100">
+  <router-outlet> </router-outlet>
+  <ngx-spinner bdColor="rgba(245,241,241,0.8)" size="large" color="#ac2c32" type="ball-scale" [fullScreen]="true">
+    <p style="color: white"> cargando... </p>
+  </ngx-spinner>
+</div>

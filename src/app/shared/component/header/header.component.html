@@ -1,0 +1,22 @@
+<nav class="navbar navbar-dark bg-primary justify-content-between p-2">
+    <a class="navbar-brand" style="color: white !important;">Santa Lucia</a>
+    <form class="form-inline">
+        <div ngbDropdown class="d-flex align-items-center">
+            <div class="mr-3">
+                <span style="color: white;">{{userName}}</span>
+            </div>
+            <div class="foto-perfil" ngbDropdownToggle>
+                <div class="circulo-act"></div>
+                <img src="../../../../assets/images/photo.jpg" alt="">
+            </div>
+            <div ngbDropdownMenu aria-labelledby=" dropdownBasic1 ">
+                <button ngbDropdownItem (click)="onChangePassword()">
+                    Cambiar contraseña
+                </button>
+                <button ngbDropdownItem (click)="onLogout()">
+                    Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </form>
+  </nav>

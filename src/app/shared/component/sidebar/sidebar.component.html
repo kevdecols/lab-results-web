@@ -1,0 +1,51 @@
+<div class="sidebar" [ngClass]="{ expanded: isExpanded }">
+    <div class="header">
+        <img class="img-logo" [ngClass]="{ expanded: isExpanded }" src="../../../../assets/images/logo-sidebar.JPG"
+            alt="" style="width: 90%;" />
+        <div class="toggle" (click)="handleSidebarToggle()">
+            <i class="bi bi-text-indent-left" [ngClass]="{ expanded: isExpanded }"></i>
+            <i class="bi bi-text-indent-right" [ngClass]="{ expanded: isExpanded }"></i>
+        </div>
+    </div>
+    <div class="content">
+        <div class="link">
+            <div class="content" [routerLink]="[routes.RESULT, routes.PATIENT_EXAMS]">
+                <div class="icon"><i class="bi bi-person-gear"></i></div>
+                <div class="title">Actualizar datos</div>
+            </div>
+        </div>
+        <div class="link with-children">
+            <div class="content" [routerLink]="[routes.RESULT, routes.PATIENT_EXAMS]">
+                <div class="icon"><i class="bi bi-person"></i></div>
+                <div class="title">Pacientes</div>
+            </div>
+        </div>
+        <div class="link with-children">
+            <div class="content" [routerLink]="[routes.RESULT, routes.PATIENT_INFO]">
+                <div class="icon"><i class="bi bi-file-text"></i></div>
+                <div class="title">Resultados</div>
+            </div>
+        </div>
+
+        <div class="link with-children">
+            <div class="content" [routerLink]="[routes.RESULT, routes.PATIENT_EXAMS]">
+                <div class="icon"><i class="bi bi-hospital"></i></div>
+                <div class="title">Clientes</div>
+            </div>
+        </div>
+
+        <div class="link with-children">
+            <div class="content" [routerLink]="[routes.RESULT, routes.PATIENT_EXAMS]">
+                <div class="icon"><i class="bi bi-gear"></i></div>
+                <div class="title">Configuración</div>
+            </div>
+        </div>
+
+        <div class="link with-children">
+            <div class="content">
+                <div class="title"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</div>

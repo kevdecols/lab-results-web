@@ -1,20 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PagesRoutingModule } from './pages/pages.routing';
-import { AuthRoutingModule } from './auth/auth.routing';
-import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { PageComponent } from './shared/component/page/page.component';
+import { AuthGuard } from './core/guard/auth.guard';
+import { NavigationRoute } from './shared/constant/navigation-route.constant';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Redirige a '/dashboard' como ruta por defecto
-  { path: '**', component: NopagefoundComponent }, // Cualquier otra ruta no encontrada muestra el componente NopagefoundComponent
-
+  {
+    path: '',
+    component: PageComponent,
+    children:[
+      {
+        path: NavigationRoute.RESULT,
+        loadChildren: () => import('./feature/result/result.module').then( (m) => m.ResultModule)
+      },
+    ],
+    canActivate: [AuthGuard]
+  },
+  {
+    path: NavigationRoute.AUTH,
+    loadChildren: () => import('./feature/auth/auth.module').then(m => m.AuthModule)
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),
-    PagesRoutingModule,
-    AuthRoutingModule,
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,0 +1,135 @@
+<form [formGroup]="formGroup" [formGroup]="formGroup" *ngIf="formGroup" autocomplete="off" novalidate #formRef="ngForm">
+  <div class="row d-flex align-items-center">
+    <div class="col">
+      <h3>Consultar resultados</h3>
+
+    </div>
+    <div class="col d-flex justify-content-end">
+      <h5>{{user.name}} </h5>,<h5 class="ml-3"> Nit: <span class="badge badge-success">{{user.identification}}</span>
+      </h5>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col">
+      <hr />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="mb-3">
+        <div>
+          <label>Fecha inicio</label>
+        </div>
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker"
+            formControlName="startDate" [ngClass]="{ 'is-invalid': controls['startDate'].errors && formRef.submitted }">
+          <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-3">
+        <div>
+          <label>Fecha fin</label>
+        </div>
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd" name="dpCheckOut" ngbDatepicker
+            #dpCheckOut="ngbDatepicker" formControlName="endDate"
+            [ngClass]="{ 'is-invalid': controls['endDate'].errors && formRef.submitted }">
+          <button class="btn btn-outline-secondary bi bi-calendar3" (click)="dpCheckOut.toggle()"
+            type="button"></button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-3">
+        <div>
+          <label>Tipo de identificación</label>
+        </div>
+        <div class="form">
+          <select class="form-control form-select" formControlName="identificationType"
+            [ngClass]="{ 'is-invalid': controls['identificationType'].errors && formRef.submitted }">
+            <option [ngValue]="null">Seleccione</option>
+            <option [ngValue]="type.value" *ngFor="let type of indentificationTypes">
+              {{type.title}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-3">
+        <div>
+          <label>Número de identificación</label>
+        </div>
+        <div class="form">
+          <input type="number" class="form-control" formControlName="identificationNumber"
+            [ngClass]="{ 'is-invalid': controls['identificationNumber'].errors && formRef.submitted }">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="mb-3">
+        <div>
+          <label>Nombre</label>
+        </div>
+        <div class="form">
+          <input type="text" class="form-control" formControlName="name"
+            [ngClass]="{ 'is-invalid': controls['name'].errors && formRef.submitted }">
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="mb-3">
+        <div>
+          <label>Apellido</label>
+        </div>
+        <div class="form">
+          <input type="text" class="form-control" formControlName="lastName"
+            [ngClass]="{ 'is-invalid': controls['lastName'].errors && formRef.submitted }">
+        </div>
+      </div>
+    </div>
+    <div class="col d-flex align-items-center">
+      <div class="form mt-3">
+        <button class="btn btn-primary btn-md btn-block" style="width: 100%;" (click)="onFind()">
+          Buscar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <hr />
+    </div>
+  </div>
+</form>
+<div class="row mt-3">
+  <div class="col">
+    <table class="table" aria-describedby="">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Identificación</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Sexo</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients;let index=index;">
+          <td>{{index}}</td>
+          <td>{{patient.identificationNumber}}</td>
+          <td>{{patient.fullName}}</td>
+          <td>{{patient.sex == 'F' ? 'Femenino' : 'Masculino'}}</td>
+          <td>
+            <img src="../../../../../assets/images/download_icon.png" alt="">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

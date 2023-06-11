@@ -1,6 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+$theme-colors: (
+  "primary": #1759bb,
+  "danger": #ff4136
+);
 
-/* Importing Bootstrap SCSS file. */
+
 @import 'bootstrap/scss/bootstrap';
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+img.logo-login {
+    width: 100%;
+}
+
+.center-main {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.login {
+    position: relative;
+    max-width: 460px;
+    background: var(--color-primario);
+    margin: auto;
+    padding: 3.0rem;
+    border-radius: 0.8rem;
+    top: 50%;
+    background: #fff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.table {
+    margin-bottom: 0px !important; 
+}
+.table th, .table td {
+    padding: 0.4rem !important;
+    vertical-align: middle;
+}
