@@ -29,7 +29,12 @@
         </div>
       </div>
       <div class="col-md-3 col-sm-3 d-flex justify-content-end">
-        <button type="button" id="btnIrCrearUsers" class="btn btn-primary">
+        <button
+          type="button"
+          id="btnIrCrearUsers"
+          (click)="open(updateEmpresa2)"
+          class="btn btn-primary"
+        >
           Nuevo
         </button>
       </div>
@@ -153,11 +158,11 @@
             <td>Activo</td>
 
             <td>
-              <span id="btnEdit"
+              <span id="btnEdit" (click)="open(updateEmpresa)"
                 ><i class="fas fa-file-alt" alt title="editar"></i>
               </span>
 
-              <span id="btnDelete"
+              <span id="btnDelete" (click)="open(eliminar)"
                 ><i class="fas fa-trash-alt" alt title="eliminar"></i>
               </span>
             </td>
@@ -517,316 +522,644 @@
         </tbody>
       </table>
     </div>
+  </div>
+</div>
 
-    <div class="modal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              id="btnCloseForm"
-              class="close"
-              data-dismiss="modal"
-              aria-hidden="true"
-            >
-              x
-            </button>
-            <h3 class="modal-title">
-              <span id="tittle_action">Actualizar Empresa </span>
-            </h3>
+<ng-template #updateEmpresa let-c="close" let-d="dismiss">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">
+        <span id="tittle_action">Actualizar Empresa </span>
+      </h3>
+    </div>
+    <div class="modal-body">
+      <span id="alert-content"></span>
+
+      <div id="msg_state_company_admin" style="display: none"></div>
+      <div id="company_form_general">
+        <form id="company_form_new" enctype="multipart/form-data">
+          <div class="row">
+            <div class="col-sm-6 col-md-6"></div>
           </div>
-          <div class="modal-body">
-            <span id="alert-content"></span>
 
-            <div id="msg_state_company_admin" style="display: none"></div>
-            <div id="company_form_general">
-              <form id="company_form_new" enctype="multipart/form-data">
-                <div class="row">
-                  <div class="col-sm-6 col-md-6"></div>
-                </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_code" class="">
+                <label>Codigo</label>
 
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_code" class="">
-                      <label>Codigo</label>
-
-                      <textarea
-                        name="code"
-                        id="code"
-                        cols="10"
-                        rows="3"
-                        class="form-control"
-                      >
+                <textarea
+                  name="code"
+                  id="code"
+                  cols="10"
+                  rows="3"
+                  class="form-control"
+                >
 ADILAB,ADILAB.</textarea
-                      >
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_identification" class="">
-                      <label>Nit</label>
-                      <input
-                        id="identification"
-                        name="identification"
-                        type="text"
-                        class="form-control"
-                        value="900341857-2"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_names" class="">
-                      <label>Razon Social</label>
-                      <input
-                        id="names"
-                        name="names"
-                        type="text"
-                        class="form-control"
-                        value="ADILAB - AYUDAS DIAGNOSTICAS Y LABORATORIO CLINICO S.A.S"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_phones" class="">
-                      <label>Telefono</label>
-                      <input
-                        id="phones"
-                        name="phones"
-                        type="text"
-                        class="form-control"
-                        value="2335681"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_password" class="">
-                      <label>Contraseña</label>
-                      <input
-                        id="password"
-                        name="password"
-                        type="password"
-                        class="form-control"
-                        value="adilab2018"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_password_2" class="">
-                      <label>Confirmar Contraseña</label>
-                      <input
-                        id="password_2"
-                        name="password_2"
-                        type="password"
-                        class="form-control"
-                        value="adilab2018"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_email" class="">
-                      <label>Correo Electronico</label>
-                      <input
-                        id="email"
-                        name="email"
-                        type="text"
-                        class="form-control"
-                        value="laboralorioi@adilab.com.co"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_contac" class="">
-                      <label>Contacto</label>
-                      <input
-                        id="contac"
-                        name="contac"
-                        type="text"
-                        class="form-control"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_phone_contact" class="">
-                      <label>Telefono de Contacto</label>
-                      <input
-                        id="phone_contact"
-                        name="phone_contact"
-                        type="text"
-                        class="form-control"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_active" class="">
-                      <label>Estado</label>
-                      <select name="active" id="active" class="form-control">
-                        <option value="">--Seleccione--</option>
-
-                        <option selected="selected" value="1">Activo</option>
-
-                        <option value="0">Inactivo</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_download_options" class="">
-                      <label>Descargar</label>
-                      <select
-                        name="download_options"
-                        id="download_options"
-                        class="form-control"
-                      >
-                        <option value="">Seleccione</option>
-
-                        <option selected="selected" value="si">
-                          Descarga Resultado
-                        </option>
-
-                        <option value="no">No descarga Resultado</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_logo_options" class="">
-                      <label>Logo</label>
-                      <select
-                        name="logo_options"
-                        id="logo_options"
-                        class="form-control"
-                      >
-                        <option value="">Seleccione</option>
-
-                        <option value="sin_logo">Sin Logo</option>
-
-                        <option value="logo_empresa">Logo empresarial</option>
-
-                        <option selected="selected" value="logo_sta">
-                          Logo Santa Lucia
-                        </option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_urlimg" class="">
-                      <label>Header</label>
-                      <div
-                        class="fileupload fileupload-new vis_aux"
-                        data-provides="fileupload"
-                      >
-                        <div
-                          class="fileupload-new img-thumbnail"
-                          style="width: 80px; height: 80px"
-                        >
-                          <img
-                            id="logoSoporte"
-                            class="aux_rem"
-                            alt=""
-                            width="80"
-                            height="80"
-                            src=""
-                          />
-                        </div>
-                        <div
-                          class="fileupload-preview fileupload-exists img-thumbnail"
-                          style="width: 80px; height: 80px"
-                        ></div>
-                        <span class="btn btn-sm btn-default btn-file">
-                          <span class="fileupload-new">Select image</span>
-                          <span class="fileupload-exists">Change</span
-                          ><input
-                            type="file"
-                            id="urlimg-company"
-                            name="urlimg-company"
-                        /></span>
-                        <a
-                          href="#"
-                          class="btn btn-sm btn-default fileupload-exists"
-                          data-dismiss="fileupload"
-                          id="removeFile"
-                          >Remove</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                    <div id="div_footer" class="">
-                      <label>Footer</label>
-                      <div
-                        class="fileupload fileupload-new vis_aux"
-                        data-provides="fileupload"
-                      >
-                        <div
-                          class="fileupload-new img-thumbnail"
-                          style="width: 80px; height: 80px"
-                        >
-                          <img
-                            id="logoSoporte"
-                            class="aux_rem"
-                            alt=""
-                            width="80"
-                            height="80"
-                            src=""
-                          />
-                        </div>
-                        <div
-                          class="fileupload-preview fileupload-exists img-thumbnail"
-                          style="width: 80px; height: 80px"
-                        ></div>
-                        <span class="btn btn-sm btn-default btn-file">
-                          <span class="fileupload-new">Select image</span>
-                          <span class="fileupload-exists">Change</span
-                          ><input
-                            type="file"
-                            id="footer-company"
-                            name="footer-company"
-                        /></span>
-                        <a
-                          href="#"
-                          class="btn btn-sm btn-default fileupload-exists"
-                          data-dismiss="fileupload"
-                          id="removeFile"
-                          >Remove</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    id="btnRegisterNew"
-                    class="btn btn-primary pull-left"
-                  >
-                    Aceptar
-                  </button>
-
-                  <button
-                    type="button"
-                    id="btnCloseRegisteNew"
-                    class="btn btn-default"
-                    data-dismiss="modal"
-                  >
-                    Cerrar
-                  </button>
-                </div>
-              </form>
+                >
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_identification" class="">
+                <label>Nit</label>
+                <input
+                  id="identification"
+                  name="identification"
+                  type="text"
+                  class="form-control"
+                  value="900341857-2"
+                />
+              </div>
             </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_names" class="">
+                <label>Razon Social</label>
+                <input
+                  id="names"
+                  name="names"
+                  type="text"
+                  class="form-control"
+                  value="ADILAB - AYUDAS DIAGNOSTICAS Y LABORATORIO CLINICO S.A.S"
+                />
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_phones" class="">
+                <label>Telefono</label>
+                <input
+                  id="phones"
+                  name="phones"
+                  type="text"
+                  class="form-control"
+                  value="2335681"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_password" class="">
+                <label>Contraseña</label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  class="form-control"
+                  value="adilab2018"
+                />
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_password_2" class="">
+                <label>Confirmar Contraseña</label>
+                <input
+                  id="password_2"
+                  name="password_2"
+                  type="password"
+                  class="form-control"
+                  value="adilab2018"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_email" class="">
+                <label>Correo Electronico</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="text"
+                  class="form-control"
+                  value="laboralorioi@adilab.com.co"
+                />
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_contac" class="">
+                <label>Contacto</label>
+                <input
+                  id="contac"
+                  name="contac"
+                  type="text"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_phone_contact" class="">
+                <label>Telefono de Contacto</label>
+                <input
+                  id="phone_contact"
+                  name="phone_contact"
+                  type="text"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_active" class="">
+                <label>Estado</label>
+                <select name="active" id="active" class="form-control">
+                  <option value="">--Seleccione--</option>
+
+                  <option selected="selected" value="1">Activo</option>
+
+                  <option value="0">Inactivo</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_download_options" class="">
+                <label>Descargar</label>
+                <select
+                  name="download_options"
+                  id="download_options"
+                  class="form-control"
+                >
+                  <option value="">Seleccione</option>
+
+                  <option selected="selected" value="si">
+                    Descarga Resultado
+                  </option>
+
+                  <option value="no">No descarga Resultado</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_logo_options" class="">
+                <label>Logo</label>
+                <select
+                  name="logo_options"
+                  id="logo_options"
+                  class="form-control"
+                >
+                  <option value="">Seleccione</option>
+
+                  <option value="sin_logo">Sin Logo</option>
+
+                  <option value="logo_empresa">Logo empresarial</option>
+
+                  <option selected="selected" value="logo_sta">
+                    Logo Santa Lucia
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_urlimg" class="">
+                <label>Header</label>
+                <div
+                  class="fileupload fileupload-new vis_aux"
+                  data-provides="fileupload"
+                >
+                  <div
+                    class="fileupload-new img-thumbnail"
+                    style="width: 80px; height: 80px"
+                  >
+                    <img
+                      id="logoSoporte"
+                      class="aux_rem"
+                      alt=""
+                      width="80"
+                      height="80"
+                      src=""
+                    />
+                  </div>
+                  <div
+                    class="fileupload-preview fileupload-exists img-thumbnail"
+                    style="width: 80px; height: 80px"
+                  ></div>
+                  <span class="btn btn-sm btn-default btn-file">
+                    <span class="fileupload-new">Select image</span>
+                    <span class="fileupload-exists">Change</span
+                    ><input
+                      type="file"
+                      id="urlimg-company"
+                      name="urlimg-company"
+                  /></span>
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-default fileupload-exists"
+                    data-dismiss="fileupload"
+                    id="removeFile"
+                    >Remove</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_footer" class="">
+                <label>Footer</label>
+                <div
+                  class="fileupload fileupload-new vis_aux"
+                  data-provides="fileupload"
+                >
+                  <div
+                    class="fileupload-new img-thumbnail"
+                    style="width: 80px; height: 80px"
+                  >
+                    <img
+                      id="logoSoporte"
+                      class="aux_rem"
+                      alt=""
+                      width="80"
+                      height="80"
+                      src=""
+                    />
+                  </div>
+                  <div
+                    class="fileupload-preview fileupload-exists img-thumbnail"
+                    style="width: 80px; height: 80px"
+                  ></div>
+                  <span class="btn btn-sm btn-default btn-file">
+                    <span class="fileupload-new">Select image</span>
+                    <span class="fileupload-exists">Change</span
+                    ><input
+                      type="file"
+                      id="footer-company"
+                      name="footer-company"
+                  /></span>
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-default fileupload-exists"
+                    data-dismiss="fileupload"
+                    id="removeFile"
+                    >Remove</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-between">
+            <button
+              type="button"
+              id="btnRegisterNew"
+              class="btn btn-primary pull-left"
+              (click)="c('Save click')"
+            >
+              Aceptar
+            </button>
+
+            <button
+              type="button"
+              id="btnCloseRegisteNew"
+              class="btn btn-default"
+              data-dismiss="modal"
+              (click)="d('Cross click')"
+            >
+              Cerrar
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-</div>
+</ng-template>
+
+<ng-template #eliminar let-c="close" let-d="dismiss">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Confirmacion</h3>
+    </div>
+    <div class="modal-body">
+      <div id="msg_state_company_admin1" style="display: none"></div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <span
+            >Empresa seleccionado:
+            <strong id="company_name">
+              ADILAB - AYUDAS DIAGNOSTICAS Y LABORATORIO CLINICO S.A.S</strong
+            >
+          </span>
+          <br />
+          <span>Esta seguro de eliminar esta Empresa? </span>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <button
+          type="button"
+          id="btnRegisterNew"
+          class="btn btn-primary pull-left"
+          (click)="c('Save click')"
+        >
+          Aceptar
+        </button>
+
+        <button
+          type="button"
+          id="btnCloseRegisteNew"
+          class="btn btn-default"
+          data-dismiss="modal"
+          (click)="d('Cross click')"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #updateEmpresa2 let-c="close" let-d="dismiss">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title"><span id="tittle_action">Nuevo Usuario</span></h3>
+    </div>
+    <div class="modal-body">
+      <span id="alert-content"></span>
+
+      <div id="msg_state_company_admin" style="display: none"></div>
+      <div id="company_form_general">
+        <form id="company_form_new" enctype="multipart/form-data">
+          <div class="row">
+            <div class="col-sm-6 col-md-6"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_code" class="">
+                <label>Codigo</label>
+
+                <textarea
+                  name="code"
+                  id="code"
+                  cols="10"
+                  rows="3"
+                  class="form-control"
+                ></textarea>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_identification" class="">
+                <label>Nit</label>
+                <input
+                  id="identification"
+                  name="identification"
+                  type="text"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_names" class="">
+                <label>Razon Social</label>
+                <input
+                  id="names"
+                  name="names"
+                  type="text"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_phones" class="">
+                <label>Telefono</label>
+                <input
+                  id="phones"
+                  name="phones"
+                  type="text"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_password" class="">
+                <label>Contraseña</label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_password_2" class="">
+                <label>Confirmar Contraseña</label>
+                <input
+                  id="password_2"
+                  name="password_2"
+                  type="password"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_email" class="">
+                <label>Correo Electronico</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="text"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_contac" class="">
+                <label>Contacto</label>
+                <input
+                  id="contac"
+                  name="contac"
+                  type="text"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_phone_contact" class="">
+                <label>Telefono de Contacto</label>
+                <input
+                  id="phone_contact"
+                  name="phone_contact"
+                  type="text"
+                  class="form-control"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_active" class="">
+                <label>Estado</label>
+                <select name="active" id="active" class="form-control">
+                  <option value="">--Seleccione--</option>
+
+                  <option value="1">Activo</option>
+
+                  <option value="0">Inactivo</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_download_options" class="">
+                <label>Descargar</label>
+                <select
+                  name="download_options"
+                  id="download_options"
+                  class="form-control"
+                >
+                  <option value="">Seleccione</option>
+
+                  <option value="si">Descarga Resultado</option>
+
+                  <option value="no">No descarga Resultado</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_logo_options" class="">
+                <label>Logo</label>
+                <select
+                  name="logo_options"
+                  id="logo_options"
+                  class="form-control"
+                >
+                  <option value="">Seleccione</option>
+
+                  <option value="sin_logo">Sin Logo</option>
+
+                  <option value="logo_empresa">Logo empresarial</option>
+
+                  <option value="logo_sta">Logo Santa Lucia</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div id="div_urlimg" class="">
+                <label>Header</label>
+                <div
+                  class="fileupload fileupload-new vis_aux"
+                  data-provides="fileupload"
+                >
+                  <div
+                    class="fileupload-new img-thumbnail"
+                    style="width: 80px; height: 80px"
+                  >
+                    <img
+                      id="logoSoporte"
+                      class="aux_rem"
+                      alt=""
+                      width="80"
+                      height="80"
+                      src="http://www.placehold.it/40x40/EFEFEF/AAAAAA&amp;text=no+image"
+                    />
+                  </div>
+                  <div
+                    class="fileupload-preview fileupload-exists img-thumbnail"
+                    style="width: 80px; height: 80px"
+                  ></div>
+                  <span class="btn btn-sm btn-default btn-file">
+                    <span class="fileupload-new">Select image</span>
+                    <span class="fileupload-exists">Change</span
+                    ><input
+                      type="file"
+                      id="urlimg-company"
+                      name="urlimg-company"
+                  /></span>
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-default fileupload-exists"
+                    data-dismiss="fileupload"
+                    id="removeFile"
+                    >Remove</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div id="div_footer" class="">
+                <label>Footer</label>
+                <div
+                  class="fileupload fileupload-new vis_aux"
+                  data-provides="fileupload"
+                >
+                  <div
+                    class="fileupload-new img-thumbnail"
+                    style="width: 80px; height: 80px"
+                  >
+                    <img
+                      id="logoSoporte"
+                      class="aux_rem"
+                      alt=""
+                      width="80"
+                      height="80"
+                      src="http://www.placehold.it/40x40/EFEFEF/AAAAAA&amp;text=no+image"
+                    />
+                  </div>
+                  <div
+                    class="fileupload-preview fileupload-exists img-thumbnail"
+                    style="width: 80px; height: 80px"
+                  ></div>
+                  <span class="btn btn-sm btn-default btn-file">
+                    <span class="fileupload-new">Select image</span>
+                    <span class="fileupload-exists">Change</span
+                    ><input
+                      type="file"
+                      id="footer-company"
+                      name="footer-company"
+                  /></span>
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-default fileupload-exists"
+                    data-dismiss="fileupload"
+                    id="removeFile"
+                    >Remove</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-between">
+            <button
+              type="button"
+              id="btnRegisterNew"
+              class="btn btn-primary pull-left"
+              (click)="c('Save click')"
+            >
+              Aceptar
+            </button>
+
+            <button
+              type="button"
+              id="btnCloseRegisteNew"
+              class="btn btn-default"
+              data-dismiss="modal"
+              (click)="d('Cross click')"
+            >
+              Cerrar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>
